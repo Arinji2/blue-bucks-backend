@@ -1,0 +1,10 @@
+services:
+  db:
+    image: ghcr.io/blue-bucks/pocketbase
+    container_name: pocketbase-db      
+    ports:
+      - "8090:8090"                    
+    volumes:
+      - ./db/pb_data:/pb/pb_data
+      - ./db/pb_migrations:/pb/pb_migrations
+      - ./db/pb_hooks:/pb/pb_hooks
