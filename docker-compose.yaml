@@ -3,7 +3,7 @@ services:
     image: ghcr.io/arinji2/blue-bucks-db
     container_name: pocketbase-db      
     ports:
-      - "8090:8090"                    
+      - "58:8090"                    
     volumes:
       - ./db/pb_data:/pb/pb_data
       - ./db/pb_migrations:/pb/pb_migrations
@@ -14,4 +14,4 @@ services:
     volumes:
       - ./api/.env:/app/.env
     ports:
-      - "3000:3000"                    
+      - "59:3000"                    
