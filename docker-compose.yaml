@@ -11,5 +11,7 @@ services:
   api:
     image: ghcr.io/arinji2/blue-bucks-api
     container_name: golang-api      
+    volumes:
+      - ./api/.env:/app/.env
     ports:
       - "3000:3000"                    
