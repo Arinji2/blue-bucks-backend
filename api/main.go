@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/blue-bucks/backend/routes"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/render"
@@ -18,10 +19,9 @@ func main() {
 	setupEnvironment()
 	r.Use(SkipLoggingMiddleware)
 	r.Get("/health", healthCheckHandler)
-
-	http.Handle("/", r)
+	r.Mount("/api", routes.SetupRoutes())
 	fmt.Println("Starting Blue-Bucks Backend on port 8080")
-	err := http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8080", r)
 	if err != nil {
 		log.Fatal(err)
 	}
