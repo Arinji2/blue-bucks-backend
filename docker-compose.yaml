@@ -14,4 +14,4 @@ services:
     volumes:
       - ./api/.env:/app/.env
     ports:
-      - "59:3000"                    
+      - "59:8080"                    
