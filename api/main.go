@@ -32,7 +32,7 @@ func setupEnvironment() {
 	if err != nil {
 		isProduction := os.Getenv("ENVIRONMENT") == "PRODUCTION"
 		if !isProduction {
-			log.Fatal("Error loading .env file")
+			fmt.Println("Error loading .env file")
 		} else {
 			fmt.Println("Using Production Environment")
 		}
