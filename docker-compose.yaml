@@ -1,6 +1,6 @@
 services:
   db:
-    image: ghcr.io/blue-bucks/pocketbase
+    image: ghcr.io/arinji2/blue-bucks-db
     container_name: pocketbase-db      
     ports:
       - "8090:8090"                    
@@ -9,7 +9,7 @@ services:
       - ./db/pb_migrations:/pb/pb_migrations
       - ./db/pb_hooks:/pb/pb_hooks
   api:
-    image: ghcr.io/blue-bucks/api
+    image: ghcr.io/arinji2/blue-bucks-api
     container_name: golang-api      
     ports:
       - "3000:3000"                    
